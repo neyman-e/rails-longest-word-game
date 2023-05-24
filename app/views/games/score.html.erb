@@ -1,0 +1,11 @@
+<h1>Result</h1>
+<p><%= @random_letters %></p>
+<% if @result == "correct" %>
+<p><strong>Congratulations! </strong><%= @tested_word %> is a valid English word!</p>
+<% elsif @result == "incorrect" %>
+<p>Sorry but <strong><%= @tested_word %></strong> does not seem to be a valid English word!</p>
+<% elsif @result == "not included" %>
+<p>Sorry but <strong><%= @tested_word %></strong> can't be built out of <%= @letters_string %></p>
+<% end %>
+<br>
+<%= link_to "Play again", new_path, {:class => "btn btn-primary"} %>
